@@ -16,6 +16,7 @@ export function Content() {
   return (
     <div>
       <h1>{plant.name}</h1>
+      <h1>{plant.id}</h1>
     </div>
   );
 }
