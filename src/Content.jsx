@@ -25,7 +25,7 @@ export function Content() {
       })
       .then((response) => {
         setPlant(response.data.result.classification.suggestions[0].details);
-        console.log(response.data);
+        console.log(response.data.result.classification.suggestions[0].details);
       })
       .catch((error) => {
         // Handle errors here
@@ -33,8 +33,8 @@ export function Content() {
       });
   }, []);
 
-  console.log("Plant", plant);
-  console.log("Details", plant?.common_names[0]);
+  // console.log("Plant", plant);
+  // console.log("Details", plant?.common_names[0]);
 
   return (
     <div>
