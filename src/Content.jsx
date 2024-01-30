@@ -38,7 +38,7 @@ export function Content() {
 
   return (
     <div>
-      {plant && (
+      {Object.keys(plant).length > 0 && (
         <>
           <h1>{plant.common_names}</h1>
           <img src={plant.image.value} />
