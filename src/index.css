@@ -11,3 +11,7 @@ html {
         @apply bg-gray-900;
     }
 }
+
+h1 {
+  background-color: aquamarine;
+}

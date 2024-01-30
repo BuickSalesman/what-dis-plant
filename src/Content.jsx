@@ -37,12 +37,12 @@ export function Content() {
   // console.log("Details", plant?.common_names[0]);
 
   return (
-    <div>
+    <div className="w-screen">
       {Object.keys(plant).length > 0 && (
-        <>
-          <h1>{plant.common_names}</h1>
-          <img src={plant.image.value} />
-        </>
+        <div className="flex flex-col justify-center">
+          <h1 className="bg-red-500 text-center">{plant.common_names}</h1>
+          <img className="p-20" src={plant.image.value} />
+        </div>
       )}
     </div>
   );
