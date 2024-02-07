@@ -3,7 +3,7 @@ import axios from "axios";
 
 export function Content() {
   const [plant, setPlant] = useState({});
-
+  const [uploadedFile, setUploadedFile] = useState({});
   useEffect(() => {
     const accessToken = "NGWphc2bBSqgWV6";
     const apiUrl = `https://plant.id/api/v3/identification/${accessToken}`;
@@ -33,6 +33,12 @@ export function Content() {
       });
   }, []);
 
+  function handleImageUpload(event) {
+    event.preventDefault();
+    console.log("event", event.target[0].files[0]);
+
+    setUploadedFile();
+  }
   // console.log("Plant", plant);
   // console.log("Details", plant?.common_names[0]);
 
@@ -40,6 +46,10 @@ export function Content() {
     <div className="w-screen">
       {Object.keys(plant).length > 0 && (
         <div className="flex flex-col justify-center">
+          <form onSubmit={handleImageUpload}>
+            <input type="file" />
+            <button type="submit">what-dis-plant</button>
+          </form>
           <h1 className="bg-red-500 text-center">{plant.common_names}</h1>
           <img className="p-20" src={plant.image.value} />
         </div>
