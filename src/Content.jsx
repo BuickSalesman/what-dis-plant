@@ -58,4 +58,4 @@ export function Content() {
   );
 }
 
-// file upload boxx
+// file upload box
