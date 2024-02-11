@@ -38,7 +38,6 @@ export function Content() {
     console.log("event", event.target[0].files[0]);
 
     setUploadedFile();
-    //have to do something here i think
   }
   // console.log("Plant", plant);
   // console.log("Details", plant?.common_names[0]);
