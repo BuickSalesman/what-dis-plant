@@ -8,7 +8,7 @@ export function Content() {
   const apiKey = "DBtTY2wyOYZeqs7L1naVhRKNR9HPlyA7AamvpkSPoWjndd7gwI";
 
   useEffect(() => {
-    const accessToken = "NGWphc2bBSqgWV6";
+    const accessToken = "SS4hTbbCJ0LveRJ";
     const apiUrl = `https://plant.id/api/v3/identification/${accessToken}`;
 
     const params = {
