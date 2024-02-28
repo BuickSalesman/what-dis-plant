@@ -27,8 +27,9 @@ export function Content() {
         params,
       })
       .then((response) => {
-        setPlant(response.data.result.classification.suggestions[0].details);
-        console.log(response.data.result.classification.suggestions[0].details);
+        setPlant(response.data.result.classification.suggestions[0]);
+        // console.log(response.data.result.classification.suggestions[0].details);
+        console.log(response.data.result.classification.suggestions[0]);
       })
       .catch((error) => {
         console.error(error);
@@ -43,7 +44,7 @@ export function Content() {
     const files = Object.values(filesObject);
 
     const base64Files = await convertImageToBase64(files);
-    console.log(base64Files);
+    // console.log(base64Files);
 
     axios
       .post(
@@ -87,12 +88,12 @@ export function Content() {
         <div className="flex flex-col justify-center">
           <form onSubmit={handleImageUpload}>
             <input type="file" multiple />
-            <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded">
-              what-dis-plant
+            <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded border">
+              what-dis-plant?
             </button>
           </form>
-          <h1 className="bg-red-500 text-center">{plant.common_names}</h1>
-          <img className="p-20" src={plant.image.value} />
+          <h1 className="bg-red-500 text-center">{plant.name}</h1>
+          <img className="p-20" src={plant.details.image.value} />
         </div>
       )}
     </div>
