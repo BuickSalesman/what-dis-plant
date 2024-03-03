@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Card } from "flowbite-react";
 
 export function Content() {
   const [plant, setPlant] = useState({});
-  const [uploadedFiles, setUploadedFiles] = useState([]);
 
   const apiKey = "DBtTY2wyOYZeqs7L1naVhRKNR9HPlyA7AamvpkSPoWjndd7gwI";
 
@@ -83,19 +83,21 @@ export function Content() {
   }
 
   return (
-    <div className="w-screen">
-      {Object.keys(plant).length > 0 && (
-        <div className="flex flex-col justify-center">
-          <form onSubmit={handleImageUpload}>
-            <input type="file" multiple />
-            <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded border">
-              what-dis-plant?
-            </button>
-          </form>
-          <h1 className="bg-red-500 text-center">{plant.name}</h1>
-          <img className="p-20" src={plant.details.image.value} />
-        </div>
-      )}
-    </div>
+    <Card href="#" className="max-w-sm" imgAlt="dis plant is da greatest" imgSrc={plant.details.image.value} horizontal>
+      <div className="w-screen">
+        {Object.keys(plant).length > 0 && (
+          <div className="flex flex-col justify-center">
+            <form onSubmit={handleImageUpload}>
+              <input type="file" multiple />
+              <button type="submit" className="bg-green-500 text-white px-4 py-2 rounded border">
+                what-dis-plant?
+              </button>
+            </form>
+            <h1 className="bg-red-500 text-center">{plant.name}</h1>
+            {/* <img className="p-20" src={plant.details.image.value} /> */}
+          </div>
+        )}
+      </div>
+    </Card>
   );
 }
